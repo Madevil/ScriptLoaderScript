@@ -2,7 +2,7 @@
 // #desc ability to refresh character in CharaMaker
 // #proc_filter Koikatu.exe
 // #author Madevil
-// v20.05.17.1
+// v20.05.17.2
 
 using UnityEngine;
 using KKAPI.Maker;
@@ -42,8 +42,7 @@ public static class ScriptLoaderRefreshChara
 		{
 			if (MakerAPI.InsideAndLoaded)
 			{
-				var chaCtrl = MakerAPI.GetCharacterControl();
-				chaCtrl.ChangeCoordinateTypeAndReload((ChaFileDefine.CoordinateType)chaCtrl.chaFile.status.coordinateType);
+				MakerAPI.GetCharacterControl().ChangeCoordinateTypeAndReload(false);
 //				BepInEx.Logging.Logger.LogDebug("Character Refreshed");
 			}
 		}
